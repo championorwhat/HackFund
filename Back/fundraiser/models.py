@@ -7,18 +7,35 @@ class Profile(models.Model):
     is_donor = models.BooleanField(default=False)  # False for fundraisers, True for donors
 
 # 2️⃣ Fundraising Campaigns (For Medical & Startups)
+# class Campaign(models.Model):
+#     CATEGORY_CHOICES = [
+#         ('medical', 'Medical'),
+#         ('startup', 'Startup')
+#     ]
+#     title = models.CharField(max_length=255)
+#     description = models.TextField()
+#     category = models.CharField(max_length=10, choices=CATEGORY_CHOICES)
+#     goal_amount = models.DecimalField(max_digits=10, decimal_places=2)
+#     raised_amount = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+#     created_at = models.DateTimeField(auto_now_add=True)
+#     owner = models.ForeignKey(User, on_delete=models.CASCADE)
+
+CATEGORY_CHOICES = [
+    ("medical", "Medical"),
+    ("startup", "Startup"),
+    ("education", "Education"),
+    ("others", "Others"),
+]
+
 class Campaign(models.Model):
-    CATEGORY_CHOICES = [
-        ('medical', 'Medical'),
-        ('startup', 'Startup')
-    ]
     title = models.CharField(max_length=255)
     description = models.TextField()
-    category = models.CharField(max_length=10, choices=CATEGORY_CHOICES)
+    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
     goal_amount = models.DecimalField(max_digits=10, decimal_places=2)
     raised_amount = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    created_at = models.DateTimeField(auto_now_add=True)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+
 
 # 3️⃣ Donations
 class Donation(models.Model):
