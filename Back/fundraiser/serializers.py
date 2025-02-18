@@ -1,20 +1,16 @@
-# fundraiser/serializers.py
 from rest_framework import serializers
-from .models import Campaign, Donation, Profile
+from .models import CustomUser
 
-class CampaignSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Campaign
-        fields = '__all__'
-        read_only_fields = ['created_at']  # Prevents this field from being overridden
+        model = CustomUser
+        fields = ['id', 'email', 'username', 'password']
+        extra_kwargs = {'password': {'write_only': True}}
 
-
-class DonationSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Donation
-        fields = '__all__'
-
-class ProfileSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Profile
-        fields = '__all__'
+    def create(self, validated_data):
+        user = CustomUser.objects.create_user(
+            email=validated_data['email'],
+            username=validated_data['username'],
+            password=validated_data['password']
+        )
+        return user
