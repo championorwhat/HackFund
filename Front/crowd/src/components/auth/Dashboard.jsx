@@ -188,20 +188,10 @@ const Dashboard = () => {
                         {fundraiser.title}
                       </p>
                       <div className="mt-2">
-                        <div className="flex items-center">
-                          <div className="w-full bg-gray-200 rounded-full h-2.5">
-                            <div 
-                              className="bg-indigo-600 h-2.5 rounded-full" 
-                              style={{ width: `${(fundraiser.raised / fundraiser.goal) * 100}%` }}
-                            ></div>
-                          </div>
-                        </div>
-                        <p className="mt-2 flex items-center text-sm text-gray-500">
-                          <DollarSign className="flex-shrink-0 mr-1.5 h-4 w-4 text-gray-400" />
+                        <p className="text-sm text-gray-500">
                           ${fundraiser.raised.toLocaleString()} raised of ${fundraiser.goal.toLocaleString()}
                         </p>
-                        <p className="mt-1 flex items-center text-sm text-gray-500">
-                          <Clock className="flex-shrink-0 mr-1.5 h-4 w-4 text-gray-400" />
+                        <p className="text-sm text-gray-500">
                           {fundraiser.daysLeft} days left
                         </p>
                       </div>
