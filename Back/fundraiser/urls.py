@@ -1,10 +1,7 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import CampaignViewSet  # Check if this import works
-
-router = DefaultRouter()
-router.register(r'campaigns', CampaignViewSet)  # Registers endpoint: /api/campaigns/
+from django.urls import path
+from .views import register_user, login_user
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('register/', register_user, name='register'),
+    path('login/', login_user, name='login'),
 ]
