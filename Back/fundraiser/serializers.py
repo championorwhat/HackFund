@@ -14,3 +14,10 @@ class UserSerializer(serializers.ModelSerializer):
             password=validated_data['password']
         )
         return user
+from rest_framework import serializers
+from .models import Fundraiser
+
+class FundraiserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Fundraiser
+        fields = '__all__'  # Use all fields
