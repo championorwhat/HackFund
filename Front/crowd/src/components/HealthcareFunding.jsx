@@ -10,12 +10,12 @@ const HealthcareFunding = () => {
     const mockHealthcareFundraisers = [
       {
         id: 1,
-        title: 'Traditional Medicine Research Center',
+        title: 'Traditional Medicine Research Centre',
         description: 'Support our research on ancient herbal remedies for modern diseases',
         goal: 75000,
         raised: 42000,
         category: 'Research',
-        image: '/images/research-lab.jpg'
+        image: '/assets/research-lab.jpeg'
       },
       {
         id: 2,
@@ -24,7 +24,7 @@ const HealthcareFunding = () => {
         goal: 50000,
         raised: 35000,
         category: 'Patient Care',
-        image: '/images/patient-care.jpg'
+        image: '/assets/patient-care.jpeg'
       },
       {
         id: 3,
@@ -33,7 +33,7 @@ const HealthcareFunding = () => {
         goal: 25000,
         raised: 12500,
         category: 'Infrastructure',
-        image: '/images/rural-clinic.jpg'
+        image: '/assets/rural-clinic.jpeg'
       },
       {
         id: 4,
@@ -42,7 +42,7 @@ const HealthcareFunding = () => {
         goal: 35000,
         raised: 15000,
         category: 'Conservation',
-        image: '/images/plants-conservation.jpg'
+        image: '/assets/plants-conservation.jpeg'
       }
     ]
     
@@ -54,7 +54,7 @@ const HealthcareFunding = () => {
       <div className="bg-green-50 p-8 rounded-lg mb-8">
         <h1 className="text-3xl font-bold mb-4 text-green-800">Healthcare Fundraising</h1>
         <p className="text-gray-700 mb-4">
-          Support innovative healthcare initiatives based on traditional medicine, Ayurveda, and natural healing practices.
+          Support people in need with monetary action and innovative healthcare initiatives based on traditional medicine, Ayurveda, and natural healing practices.
         </p>
         <Link
           to="/create-fundraiser"

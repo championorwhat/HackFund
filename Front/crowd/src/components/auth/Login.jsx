@@ -26,9 +26,9 @@ const AuthPage = () => {
   return (
     <div
       className="flex items-center justify-center min-h-screen bg-cover bg-center"
-      style={{ backgroundImage: "url('/assets/Bgimage.jpg')" }}
+      style={{ backgroundImage: "url('/assets/Bgimage2.jpg')" }}
     >
-      <div className="bg-white/80 p-10 rounded-xl shadow-lg max-w-sm w-full backdrop-blur-md min-h-[500px] flex flex-col justify-center">
+      <div className="bg-white/80 p-10 rounded-xl shadow-lg max-w-sm w-full backdrop-blur-md min-h-[400px] flex flex-col justify-center">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
           {isSignup ? "Sign Up" : "Member Login"}
         </h2>

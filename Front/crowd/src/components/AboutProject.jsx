@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 
 const AboutProject = () => {
   return (
+    
     <div className="max-w-7xl mx-auto px-4 py-8">
       <div className="bg-green-50 p-8 rounded-lg shadow-md mb-12">
-        <h1 className="text-4xl font-bold mb-6 text-green-800">About PharmaFlow Funding</h1>
+        <h1 className="text-4xl font-bold mb-6 text-green-800">About HackFund</h1>
         <p className="text-xl mb-6">
           Bridging traditional wisdom with modern funding solutions
         </p>
@@ -15,19 +16,22 @@ const AboutProject = () => {
         <div>
           <h2 className="text-2xl font-semibold mb-4 text-green-700">Our Mission</h2>
           <p className="text-gray-700 mb-4">
-            PharmaFlow Funding aims to create a bridge between traditional healthcare wisdom and modern
-            funding mechanisms. We believe that India's rich heritage of natural medicine - Ayurveda, 
-            Yoga, Unani, and Naturopathy - deserves proper funding and support to reach its full potential
-            in the modern world.
+            Our platform enables access to life-saving treatments. It extends opportunities to those who cannot afford them.
+            Funds provide immediate relief for patients and their families. This alleviates the financial burden of medical treatment.
           </p>
           <p className="text-gray-700 mb-4">
-            Our platform connects healthcare practitioners, researchers, and startups with people who want
-            to support natural and traditional medicine through crowdfunding and investment.
+            It connects healthcare practitioners, researchers, and startups with people who wish
+            to offer support through crowdfunding and investment.
+          </p>
+          <p className="text-gray-700 mb-4">
+            We believe that financial constraints should never be a barrier to receiving quality healthcare or launching innovative ideas.
+            Through community-driven support, we aim to democratize access to funding and create a world where everyone has 
+            the opportunity to thrive, heal, and innovate.
           </p>
         </div>
         <div className="flex items-center justify-center">
           <img 
-            src="/images/mission.jpg" 
+            src="/assets/mission.jpg" 
             alt="Our Mission" 
             className="rounded-lg shadow-md max-h-80 object-cover"
           />
@@ -39,29 +43,29 @@ const AboutProject = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center p-4">
             <div className="w-24 h-24 mx-auto bg-green-200 rounded-full flex items-center justify-center mb-4">
-              <span className="text-3xl">🌿</span>
+              <span className="text-3xl">🏥</span>
             </div>
-            <h3 className="font-semibold mb-2">Ayurveda</h3>
+            <h3 className="font-semibold mb-2">Healthcare Funding</h3>
             <p className="text-gray-600">
-              Supporting the world's oldest holistic healing system through modern funding
+              Supporting patients with medical expenses, treatments, and recovery needs through community contributions
             </p>
           </div>
           <div className="text-center p-4">
             <div className="w-24 h-24 mx-auto bg-blue-200 rounded-full flex items-center justify-center mb-4">
-              <span className="text-3xl">🧘</span>
+              <span className="text-3xl">💡</span>
             </div>
-            <h3 className="font-semibold mb-2">Yoga & Naturopathy</h3>
+            <h3 className="font-semibold mb-2">Startup Innovation</h3>
             <p className="text-gray-600">
-              Investing in natural healing practices that promote wellness and prevention
+              Empowering entrepreneurs to bring their healthcare and wellness solutions to market
             </p>
           </div>
           <div className="text-center p-4">
             <div className="w-24 h-24 mx-auto bg-amber-200 rounded-full flex items-center justify-center mb-4">
-              <span className="text-3xl">🔬</span>
+              <span className="text-3xl">🤝</span>
             </div>
-            <h3 className="font-semibold mb-2">Unani</h3>
+            <h3 className="font-semibold mb-2">Community Support</h3>
             <p className="text-gray-600">
-              Preserving and modernizing traditional healing systems from the Middle East
+              Building connections between those in need and individuals ready to help through secure, transparent funding
             </p>
           </div>
         </div>
