@@ -10,6 +10,7 @@ import DonationPage from './components/DonationPage';
 import AboutProject from './components/AboutProject';
 import HealthcareFunding from './components/HealthcareFunding';
 import StartupFunding from './components/StartupFunding';
+import Verification from './components/verification';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -47,6 +48,14 @@ const App = () => {
           element={
             <ProtectedRoute>
               <AboutProject />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/verification"
+          element={
+            <ProtectedRoute>
+              <Verification />
             </ProtectedRoute>
           }
         />

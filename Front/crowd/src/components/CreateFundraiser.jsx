@@ -14,7 +14,7 @@ const CreateFundraiser = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Add your API call here
-    navigate("/dashboard");
+    navigate("/verification");
   };
 
   return (

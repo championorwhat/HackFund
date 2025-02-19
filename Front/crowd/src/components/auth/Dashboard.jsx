@@ -60,10 +60,13 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-6">
+    <div 
+      className="min-h-screen py-6 bg-cover bg-center bg-fixed" 
+      style={{ backgroundImage: "url('/assets/Bgimage3.jpg')" }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex justify-between items-center mb-8 bg-white bg-opacity-90 p-4 rounded-lg shadow">
           <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
           <Link
             to="/create-fundraiser"
@@ -76,7 +79,7 @@ const Dashboard = () => {
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 mb-8">
-          <div className="bg-white overflow-hidden shadow rounded-lg">
+          <div className="bg-white bg-opacity-90 overflow-hidden shadow rounded-lg">
             <div className="p-5">
               <div className="flex items-center">
                 <div className="flex-shrink-0">
@@ -96,7 +99,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="bg-white overflow-hidden shadow rounded-lg">
+          <div className="bg-white bg-opacity-90 overflow-hidden shadow rounded-lg">
             <div className="p-5">
               <div className="flex items-center">
                 <div className="flex-shrink-0">
@@ -116,7 +119,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="bg-white overflow-hidden shadow rounded-lg">
+          <div className="bg-white bg-opacity-90 overflow-hidden shadow rounded-lg">
             <div className="p-5">
               <div className="flex items-center">
                 <div className="flex-shrink-0">
@@ -139,7 +142,7 @@ const Dashboard = () => {
 
         {/* Charts Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          <div className="bg-white p-6 rounded-lg shadow">
+          <div className="bg-white bg-opacity-90 p-6 rounded-lg shadow">
             <h3 className="text-lg font-medium text-gray-900 mb-4">Monthly Donations</h3>
             <div className="h-64">
               <ResponsiveContainer width="100%" height="100%">
@@ -155,7 +158,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow">
+          <div className="bg-white bg-opacity-90 p-6 rounded-lg shadow">
             <h3 className="text-lg font-medium text-gray-900 mb-4">Campaign Performance</h3>
             <div className="h-64">
               <ResponsiveContainer width="100%" height="100%">
@@ -174,7 +177,7 @@ const Dashboard = () => {
         </div>
 
         {/* Recent Fundraisers */}
-        <div className="bg-white shadow rounded-lg">
+        <div className="bg-white bg-opacity-90 shadow rounded-lg">
           <div className="px-4 py-5 sm:px-6">
             <h3 className="text-lg font-medium text-gray-900">Recent Fundraisers</h3>
           </div>

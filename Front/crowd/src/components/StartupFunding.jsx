@@ -10,39 +10,39 @@ const StartupFunding = () => {
     const mockStartups = [
       {
         id: 101,
-        title: 'AyurTech: AI-based Ayurvedic Diagnosis',
-        description: 'Combining artificial intelligence with traditional Ayurvedic knowledge to create personalized health recommendations',
+        title: 'EcoByte',
+        description: 'AI-powered analytics for optimizing energy consumption and reducing carbon footprints.',
         goal: 150000,
         raised: 87000,
-        category: 'Health Tech',
-        image: '/images/ai-health.jpg'
+        category: 'Sustainable Dev',
+        image: '/assets/ecobyte.webp'
       },
       {
         id: 102,
-        title: 'Green Farms: Organic Herbal Cultivation',
-        description: 'Sustainable farming of high-quality medicinal herbs using modern agricultural technology',
+        title: 'FinGuard',
+        description: 'Next-gen cybersecurity for fintech platforms, ensuring secure transactions and fraud detection.',
         goal: 200000,
         raised: 120000,
-        category: 'AgriTech',
-        image: '/images/herbal-farm.jpg'
+        category: 'FinTech',
+        image: '/assets/fintechr.webp'
       },
       {
         id: 103,
-        title: 'YogiFit: Personalized Yoga App',
-        description: 'Mobile application that creates custom yoga routines based on individual health profiles',
+        title: 'AgriGenix',
+        description: 'Smart AI-driven solutions for precision farming and sustainable agriculture.',
         goal: 75000,
         raised: 45000,
-        category: 'Fitness Tech',
-        image: '/images/yoga-app.jpg'
+        category: 'Agri-Tech',
+        image: '/assets/agritech.webp'
       },
       {
         id: 104,
-        title: 'NaturRx: Herbal Medicine Delivery',
-        description: 'On-demand delivery platform connecting patients with certified natural medicine practitioners',
+        title: 'MediSync',
+        description: 'A decentralized platform that securely connects patients and healthcare providers using blockchain.',
         goal: 120000,
         raised: 60000,
         category: 'Service Platform',
-        image: '/images/medicine-delivery.jpg'
+        image: '/assets/medtech.webp'
       }
     ]
     

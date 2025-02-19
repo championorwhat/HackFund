@@ -5,12 +5,12 @@ const Home = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
       <div className="bg-green-600 text-white p-12 rounded-lg mb-12">
-        <h1 className="text-4xl font-bold mb-4">Welcome to PharmaFlow Funding</h1>
+        <h1 className="text-4xl font-bold mb-4">Welcome to HackFund</h1>
         <p className="text-xl mb-6">
-          "India is a treasure trove of herbal plants, it is, in a way our Green Gold."
+          "All for one and one for all!"
         </p>
         <p className="mb-8">
-          Discover natural remedies and support innovative health solutions through our platform.
+          Discover startups in need, attain the power to create your own and support initiatives for the better through our platform.
         </p>
         <Link
           to="/about-project"
@@ -26,7 +26,7 @@ const Home = () => {
         <div className="border rounded-lg p-8 shadow-lg bg-green-50 hover:bg-green-100 transition duration-300">
           <div className="flex justify-center mb-4">
             <img
-              src="/images/healthcare.png" 
+              src="/assets/healthcare.png" 
               alt="Healthcare"
               className="w-24 h-24 rounded-full object-cover"
             />
@@ -49,7 +49,7 @@ const Home = () => {
         <div className="border rounded-lg p-8 shadow-lg bg-green-50 hover:bg-green-100 transition duration-300">
           <div className="flex justify-center mb-4">
             <img
-              src="/images/startup.png"
+              src="/assets/startup.png"
               alt="Startup"
               className="w-24 h-24 rounded-full object-cover"
             />
@@ -57,7 +57,7 @@ const Home = () => {
           <h3 className="text-2xl font-semibold mb-4 text-center text-green-800">Startup Funding</h3>
           <p className="text-gray-700 mb-6">
             Invest in promising startups that are revolutionizing herbal medicine, ayurveda,
-            yoga, and natural wellness industries. Be part of the green revolution.
+            education, financial awareness and so much more. Be part of the green revolution.
           </p>
           <div className="text-center">
             <Link
