@@ -52,14 +52,14 @@ def login_user(request):
         'refresh': str(refresh),
         'access': str(refresh.access_token),
     })
-@api_view(['POST'])
-@permission_classes([IsAuthenticated])  # User must be logged in
-def create_fundraiser(request):
-    serializer = FundraiserSerializer(data=request.data)
-    if serializer.is_valid():
-        serializer.save(user=request.user)  # Assign logged-in user
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
-    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+# @api_view(['POST'])
+# @permission_classes([IsAuthenticated])  # User must be logged in
+# def create_fundraiser(request):
+#     serializer = FundraiserSerializer(data=request.data)
+#     if serializer.is_valid():
+#         serializer.save(user=request.user)  # Assign logged-in user
+#         return Response(serializer.data, status=status.HTTP_201_CREATED)
+#     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET'])
 def list_fundraisers(request):
@@ -82,6 +82,46 @@ def get_fundraiser(request, fundraiser_id):
     except Fundraiser.DoesNotExist:
         return Response({'error': 'Fundraiser not found'}, status=status.HTTP_404_NOT_FOUND)
 @api_view(['GET'])
+
+
 @permission_classes([IsAuthenticated])
 def protected_view(request):
     return Response({"message": "You have accessed a protected route!"})
+
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def create_fundraiser(request):
+    """API for creating a fundraiser"""
+    print("🔹 Request Data:", request.data)  # Debugging
+
+    serializer = FundraiserSerializer(data=request.data, context={'request': request})
+    if serializer.is_valid():
+        fundraiser = serializer.save(user=request.user)  # Ensure fundraiser is saved with a user
+        print(f"✅ Fundraiser Created: {fundraiser.title} (ID: {fundraiser.id})")
+
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
+    print("❌ Validation Errors:", serializer.errors)  # Debugging for errors
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def verify_fundraiser(request, fundraiser_id):
+    """API for submitting verification details"""
+    try:
+        fundraiser = Fundraiser.objects.get(id=fundraiser_id, user=request.user)
+    except Fundraiser.DoesNotExist:
+        return Response({'error': 'Fundraiser not found or unauthorized'}, status=status.HTTP_404_NOT_FOUND)
+
+    # Handle file uploads
+    authorized_doc = request.FILES.get("authorizedDoc")
+    company_evaluation = request.FILES.get("companyEvaluation")
+
+    serializer = FundraiserSerializer(fundraiser, data=request.data, partial=True, context={'request': request})
+
+    if serializer.is_valid():
+        serializer.save(status="Pending", authorized_doc=authorized_doc, company_evaluation=company_evaluation)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

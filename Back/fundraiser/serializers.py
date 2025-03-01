@@ -20,4 +20,5 @@ from .models import Fundraiser
 class FundraiserSerializer(serializers.ModelSerializer):
     class Meta:
         model = Fundraiser
-        fields = '__all__'  # Use all fields
+        fields = '__all__'
+        read_only_fields = ['user', 'status']  # Use all fields

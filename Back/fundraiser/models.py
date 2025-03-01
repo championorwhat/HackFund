@@ -38,18 +38,31 @@ User = get_user_model()
 
 class Fundraiser(models.Model):
     CATEGORY_CHOICES = [
-        ('healthcare', 'Healthcare'),
-        ('startup', 'Startup'),
+        ('Medical', 'Medical'),
+        ('Startup', 'Startup'),
     ]
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)  # Who created it
+    STATUS_CHOICES = [
+        ('Pending', 'Pending'),
+        ('Verified', 'Verified'),
+        ('Rejected', 'Rejected'),
+    ]
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)  # Fundraiser creator
     title = models.CharField(max_length=255)
     description = models.TextField()
     goal_amount = models.DecimalField(max_digits=10, decimal_places=2)
-    raised_amount = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
-    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)  # AI will assign category
+    category = models.CharField(max_length=10, choices=CATEGORY_CHOICES)
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='Pending')
+
+    # Verification Details
+    company_content = models.TextField(blank=True, null=True)
+    authorized_doc = models.FileField(upload_to='fundraiser_docs/', blank=True, null=True)
+    company_evaluation = models.FileField(upload_to='fundraiser_docs/', blank=True, null=True)
+    why_fundraise = models.TextField(blank=True, null=True)
+    pre_existing_loans = models.CharField(max_length=3, choices=[('Yes', 'Yes'), ('No', 'No')], default='No')
+
     created_at = models.DateTimeField(auto_now_add=True)
-    is_verified = models.BooleanField(default=False)  # AI verification flag
 
     def __str__(self):
         return self.title
